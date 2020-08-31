@@ -13,6 +13,9 @@ java.sourceCompatibility = JavaVersion.VERSION_1_8
 
 repositories {
 	mavenCentral()
+	maven {
+		url = uri("https://repo.spring.io/libs-snapshot")
+	}
 }
 
 dependencies {
@@ -22,6 +25,8 @@ dependencies {
 	testImplementation("org.springframework.boot:spring-boot-starter-test") {
 		exclude(group = "org.junit.vintage", module = "junit-vintage-engine")
 	}
+
+	implementation("org.springframework.shell:spring-shell-starter:2.0.1.BUILD-SNAPSHOT")
 }
 
 tasks.withType<Test> {
